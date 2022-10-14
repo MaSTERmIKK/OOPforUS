@@ -1,0 +1,119 @@
+package lezione_11;
+
+import java.util.Scanner;
+
+public class Voli {
+	private static Scanner in;
+	public static void main(String[] args) {
+		
+	
+		
+		in = new Scanner(System.in);
+		
+int scelta = 0;
+		
+		do {
+		
+			System.out.println("Scagli opzione: ");
+			System.out.println("1) Registrati\n"
+					+ "2) Loggati\"\n"
+					+ "0) Esci");
+			System.out.print("> ");
+			
+			scelta = leggiIntero();
+			
+			switch(scelta) {
+			
+			case 1: Registrati(); break; 
+			case 2: Loggati(); break;
+			case 0: System.out.println("Ti aspettiamo"); break;
+	}
+		
+			
+	
+		}while(scelta != 0);
+		
+		
+	}
+		
+		private static void Loggati() {
+			
+			int voliAtlantic = 3;
+			int voliNonAtlantic= 12;
+			String voliMegAtlantic = "non disponibili";
+			
+			String nome= "elisa";
+			String password ="di lascio";
+			
+		System.out.println("dimmi nome");
+		String nome1 = in.nextLine();
+		
+		System.out.println("dimmi password");
+		String password1 = in.nextLine();
+		
+		if (nome.equals(nome1) && password.equals(password1))
+		{
+			System.out.println("scegli 1 per comprare, 2 per visualizzare, 3 per uscire");
+			int scelta = 0;
+			
+			scelta = leggiIntero();
+			
+			
+			while (scelta !=0) {
+			
+			if(scelta == 1)
+			{ 
+				
+				voliNonAtlantic --;
+				System.out.println(voliNonAtlantic);
+				
+				System.out.println("vuoi acquistare un altro biglietto?");
+				break;
+			}else if (scelta==2) {
+			
+			System.out.println(voliAtlantic + voliNonAtlantic + voliMegAtlantic);
+			}
+			
+			else {
+				System.out.println("ripeti il login");
+			}
+			
+			}	
+		}else {
+			System.out.println(" utente e pass errati ripeti operazione");
+		}
+	}
+
+
+
+
+		private static void Registrati() {
+		System.out.println("dimmi nome");
+		String nome = in.nextLine();
+		
+		System.out.println("dimmi cognome");
+		String cognome = in.nextLine();
+		
+		System.out.println(" scegli password");
+		String password = in.nextLine();
+		String inserimento = nome + " | " + cognome + " | " + password;
+		if (inserimento =="") {
+			System.out.println(" mi dispiace inserimento non a buon fine");
+			
+		}else {
+			System.out.println("inserimento corretto");
+		}
+	}
+
+
+
+
+		private static int leggiIntero() {
+			int scelta;
+			scelta = in.nextInt();
+			in.nextLine();
+			return scelta;
+		}	
+		
+		
+}
