@@ -1,0 +1,63 @@
+package lezione_17;
+
+import java.util.Scanner;
+
+public class Lez10_2 {
+
+	public static void main(String[] args) {
+		String uno = "Mikk";
+		String due = "Anthony";
+		int tre = 45;
+		int quattro= 34;
+		int cinque = 100;
+		boolean sei = true;
+		Scanner in = new Scanner(System.in);
+
+		//Andiamo a creare un while che tenga tutto
+		//dopodiche andiamo a salvare un inserimento
+		//e dobbiamo creare una condizione unica 
+		//dove vengano controllati tutti gli int tutti le string e solo per ultimo il boleano
+		//basta che una stringa sia vera ||  per gli interi invece tutti veri &&
+		//il booleano deve essere controllato con la negazione !
+		//alla fine se tutti i controlli sono giusti stampa tutti i dati
+
+		boolean uscita= false;
+		while(!(uscita== true)) {
+			
+			System.out.println("inserisci il nome");
+			String nome = in.nextLine();
+			
+			if(nome.equals(uno) || nome.equals(due)) {
+				
+				System.out.println(" dimmi la tua etÃ  ");
+				int eta = in.nextInt();
+				in.nextLine();
+			
+				if(eta == cinque)	{
+					System.out.println("dimmi eta1");
+					int eta1 = in.nextInt();
+					in.nextLine();
+			
+					if(eta1 == tre ) {
+						System.out.println("dimmi eta2");
+						int eta2 = in.nextInt();
+						in.nextLine();
+			
+						if (eta2 == quattro) {
+				  
+							uscita= true;
+							sei = false;
+			  
+							String dati = nome+ "   "+ eta+ "  "+ eta1+ "  "+eta2;
+
+							if (!(uscita == sei)) {
+				   
+								System.out.println(dati);
+							}} //chiudono if eta2 e il controllo per stampare
+					}}	// chiudono if dei controlli dell'etÃ 
+						
+			}// chiude il controllo delle stringhe
+		}// chiude il while
+
+	}// chiude il main
+}// chiude la classe
