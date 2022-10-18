@@ -1,0 +1,121 @@
+package lezione_17;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class TavolaCalda {
+	
+	//a tavola calda
+
+
+	// scrivere un menu dentro un arraylist " PiattiMenu " con questi elementi   0 - Fritata  1- Pizza 2- Stufato 3- Pasta alle Sarde
+	// cI SARÃ  LEGATO a lui un altro Array list " PrezzoPiattiMenu "" composto dai prezzi 0 - 12 / 1- 34 / 2- 11 /  3- 50
+	// Dobbiamo far si che ogni cliente che accede debba darci un Nome (String) una password ( String ) e un budget( int )
+	// Gli esponiamo il menu e gli diamo la possibilitÃ  di scegliere, scaliamo la cifra dal suo budget se possibile ma solo dopo il controllo della password
+	// dopodiche torniamo al menu dei piatti per far selezionare altro o uscire si puÃ² uscire solo da questo menu
+
+public static void main(String[] args) {
+	
+	
+	boolean controllo = false;
+	// DEVO CREARE PRIMA UN CLIENTE CON NOME, PASS E SOLDI
+	
+	
+	ArrayList<String> PiattiMenu= new ArrayList<String>();
+	
+	PiattiMenu.add("Frittata");
+	PiattiMenu.add("Pizza");	
+	PiattiMenu.add("Stufato");	
+	PiattiMenu.add("Pasta alle sarde");	
+	
+	ArrayList<Integer> PrezzoPiattiMenu= new ArrayList<Integer>();
+	
+	PrezzoPiattiMenu.add(12);
+	PrezzoPiattiMenu.add(34);
+	PrezzoPiattiMenu.add(11);
+	PrezzoPiattiMenu.add(50);
+	
+	
+	do {
+	Scanner in = new Scanner(System.in);
+	String pass= "12345";
+	
+	System.out.println("benvenuto nella Tavola calda");
+	System.out.println("esegui il login");
+	
+	System.out.println("dimmi nome");
+	String nome = in.nextLine();
+	
+	System.out.println("dimmi pass");
+	String pass1 = in.nextLine();
+	
+	System.out.println("dimmi quanti soldi hai");
+	int soldi = in.nextInt();
+	in.nextLine();
+	
+	
+String scelta;
+do { //apro questo ciclo do-while all'interno dell'altro ciclo do- while per iterare solo questo pezzo di codice
+	
+	System.out.println(PiattiMenu);
+	System.out.println(PrezzoPiattiMenu);
+	
+	System.out.println("scegli un piatto che vuoi acquistare\n");
+	 scelta=in.nextLine();
+	
+	
+	
+	if(pass1.equals(pass)) {
+		
+			if(scelta.equals(PiattiMenu.get(0))) {
+				if (soldi >= PrezzoPiattiMenu.get(0)) {
+					
+					soldi= soldi- PrezzoPiattiMenu.get(0);
+					System.out.println(soldi);
+				}}}// chiudono gli if annidati relativi alla scelta dell'utente del dato presente nella pos 3 dell'arrayList (Frittata)
+		
+	
+
+	if(pass1.equals(pass)) {
+		
+			if(scelta.equals(PiattiMenu.get(1))) {
+				if (soldi >= PrezzoPiattiMenu.get(1)) {
+					
+					soldi= soldi- PrezzoPiattiMenu.get(1);
+					System.out.println(soldi);
+				}}} // chiudono gli if annidati relativi alla scelta dell'utente del dato presente nella pos 3 dell'arrayList (Pizza)
+	
+	
+	if(pass1.equals(pass)) {
+		
+		if(scelta.equals(PiattiMenu.get(2))) {
+			if (soldi >= PrezzoPiattiMenu.get(2)) {
+				
+				soldi= soldi- PrezzoPiattiMenu.get(2);
+				System.out.println(soldi);
+			}}} // chiudono gli if annidati relativi alla scelta dell'utente del dato presente nella pos 3 dell'arrayList (Stufato)
+	
+	
+if(pass1.equals(pass)) {
+		
+		if(scelta.equals(PiattiMenu.get(3))) {
+			if (soldi >= PrezzoPiattiMenu.get(3)) {
+				
+				soldi= soldi- PrezzoPiattiMenu.get(3);
+				System.out.println(soldi);
+			}}}// chiudono gli if annidati relativi alla scelta dell'utente del dato presente nella pos 3 dell'arrayList (Pasta alle sarde)
+	
+}while(scelta.equals(PiattiMenu.get(0))|| scelta.equals(PiattiMenu.get(1))|| scelta.equals(PiattiMenu.get(2)) || scelta.equals(PiattiMenu.get(3)));
+	// riga sopra :chiudo il secondo ciclo di do-while all'interno cosi' faccio girare il codice 
+    // solo nella parte che mi interessa cioe' la visualizzazione degli array e l'acquisto dei piatti del menu
+		
+	controllo=true; //mi permette di uscire dal ciclo
+	}while(controllo=false);// questo controlla il primo ciclo do-while
+	
+	
+
+}}//chiusura main e class
+
+	
+	// :) FUNZIONAAAAAAAAAAAAA 
+
