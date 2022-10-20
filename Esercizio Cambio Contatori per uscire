@@ -1,0 +1,247 @@
+package lezione_11;
+
+import java.util.Scanner;
+
+public class EsercizioCondiviso {
+public static void main(String[] args) {
+	
+	
+	
+	String UserName, Password;
+	int id;
+	Boolean StatoBool;
+	Scanner in = new Scanner(System.in);
+	Scanner in2 = new Scanner(System.in);
+	Scanner in3 = new Scanner(System.in);
+	
+	Boolean controllo= true;
+	
+	System.out.println("dimmi UserName");
+	UserName = in.nextLine();
+	
+	System.out.println("dimmi pass");
+	Password = in.nextLine();
+	
+	System.out.println("dimmi id");
+	id = in3.nextInt();
+	
+	
+	System.out.println("scegli true o false");
+	StatoBool = in2.nextBoolean();
+	
+	
+	System.out.println("inserimento avvenuto con successo");
+	
+	int scelta = 0;
+	
+	do {
+		
+		System.out.println("Scegli opzione: ");
+		System.out.println("1) modifica UserName \n"
+				+ "2) modifica Password \n"
+				+ "3) modifica id \n"
+				+ "4) modifica StatoBool \n"
+				+ "5) visualizza dati \n"
+				+ "0) uscire");
+		
+		System.out.print("> ");
+		scelta=in3.nextInt();
+		
+		
+		
+		while(scelta!=0) {
+			if(scelta==1) {
+			System.out.println("dimmi la vecchia Username");
+			String ControlloUserName = in.nextLine();
+			
+			if (UserName.equals(ControlloUserName)) {
+				System.out.println("dimmi il nuovo username");
+				String newUserName = in.nextLine();
+				System.out.println("inserimento corretto"+ "  "+ newUserName);
+				}} // chiusura if
+		
+			if(scelta==2) {
+				System.out.println("dimmi la vecchia Password");
+				String ControlloPassword =in.nextLine();
+				if (Password.equals(ControlloPassword)) {
+					System.out.println("dimmi nuova password");
+					String newPassword = in.nextLine();
+					
+					System.out.println("inserimento corretto"+ "  "+ newPassword);
+			}}// chiusura if
+		
+		
+			if(scelta==3) {
+				System.out.println("dimmi il vecchio id");
+				int ControlloId =in3.nextInt();
+				if (id==ControlloId) {
+					System.out.println("dimmi nuovo id");
+					int newId = in3.nextInt();
+					System.out.println("inserimento corretto"+ "  "+ newId);
+			}}// chiusura if
+		
+			if(scelta==4) {
+				System.out.println("il vecchio StatoBool");
+				Boolean ControlloStatoBool =in2.nextBoolean();
+				if (ControlloStatoBool == StatoBool) {
+					System.out.println("inserisci il nuovo StatoBool");
+					Boolean newStatoBool= in2.nextBoolean();
+					System.out.println("inserimento corretto"+ "  "+ newStatoBool);
+			}}// chiusura if
+			
+			
+			if(scelta==5) {
+				System.out.println("dimmi la password per accedere");
+				String pass3 =in.nextLine();
+				if (Password.equals(pass3)) {
+					System.out.println("ecco i tuoi dati"+ UserName+Password+id+StatoBool);
+					
+			}}// chiusura if
+		scelta=0;
+		} 
+		
+		 controllo = false;
+	}while(controllo==true); // chiusura do
+		
+	
+	
+	
+	
+	do {
+		System.out.println("Scegli opzione: ");
+		System.out.println("1) per cambiare ContatoreA \n"
+				+ "2) modifica ContatoreB \n"	
+				+"3) modifica ContatoreC \n"
+				+ "0) uscire");
+		
+		System.out.print("> ");
+		scelta=in3.nextInt();
+		
+		
+		switch(scelta) {
+		
+		case 1: ModContA(); break; 
+		case 2:	ModContB(); break;
+		case 3: ModContC(); break;
+		case 0: System.out.println("Ciao! e' stato bello giocare con te"); break;
+		default:	 System.out.println("Scelta errata");
+	
+		}
+
+	}while(scelta!=0);
+	
+	
+	
+	
+	}
+
+private static void ModContC() {
+	
+	Boolean ContatoreA= true;
+	Boolean ContatoreB= false;
+	Boolean ContatoreC= false;
+	Boolean controllo= true;
+	Scanner in = new Scanner(System.in);
+	Scanner in2 = new Scanner(System.in);
+	String userName= "eli";
+	String password= "12345";
+	
+	do {
+		
+		System.out.println("dimmi username");
+		String newUserName= in.nextLine();
+		
+		System.out.println("dimmi password");
+		String newPassword= in.nextLine();
+		
+	if(newUserName.equals(userName) && newPassword.equals(password)) {
+	System.out.println("il contatore A e' true, ti ricordo che per uscire tutti gli stati dei contatori devo essere uguali cambia ContatoreC");
+	ContatoreC= in2.nextBoolean();
+	
+	if(ContatoreC== true) {
+	
+	System.out.println("bene ora il contatoreA e C sono true il contatoreB e' false inserisci lo stato del contatore B");
+	ContatoreB= in2.nextBoolean();
+	
+	if (ContatoreB== true) {
+	System.out.println("bravo sei riuscito ad uscire");
+	}}}
+	controllo=false;
+}while(controllo== true);
+	
+	
+	
+	
+}
+
+private static void ModContB() {
+	Boolean ContatoreA= true;
+	Boolean ContatoreB= false;
+	Boolean ContatoreC= false;
+	Boolean controllo= true;
+	Scanner in = new Scanner(System.in);
+	Scanner in2 = new Scanner(System.in);
+	String userName= "eli";
+	String password= "12345";
+	
+	do {
+		
+		System.out.println("dimmi username");
+		String newUserName= in.nextLine();
+		
+		System.out.println("dimmi password");
+		String newPassword= in.nextLine();
+		
+	if(newUserName.equals(userName) && newPassword.equals(password)) {
+	System.out.println("il contatore A e' true, ti ricordo che per uscire tutti gli stati dei contatori devo essere uguali cambia ContatoreB");
+	ContatoreB= in2.nextBoolean();
+	
+	if(ContatoreB== true) {
+	
+	System.out.println("bene ora il contatoreA e B sono true il contatoreC e' false inserisci lo stato del contatore c");
+	ContatoreC= in2.nextBoolean();
+	
+	if (ContatoreC== true) {
+	System.out.println("bravo sei riuscito ad uscire");
+	}}}
+	controllo=false;
+}while(controllo== true);
+	
+}
+
+private static void ModContA() {
+	Boolean ContatoreA= true;
+	Boolean ContatoreB= false;
+	Boolean ContatoreC= false;
+	Boolean controllo= true;
+	Scanner in = new Scanner(System.in);
+	Scanner in2 = new Scanner(System.in);
+	String userName= "eli";
+	String password= "12345";
+	
+	do {
+		
+		System.out.println("dimmi username");
+		String newUserName= in.nextLine();
+		
+		System.out.println("dimmi password");
+		String newPassword= in.nextLine();
+		
+	if(newUserName.equals(userName) && newPassword.equals(password)) {
+	System.out.println("il contatore B e' false, ti ricordo che per uscire tutti gli stati dei contatori devo essere uguali cambia ContatoreA");
+	ContatoreA= in2.nextBoolean();
+	
+	if(ContatoreA== false) {
+	
+	System.out.println("bene ora il contatoreA e B sono false il contatoreC e' false inserisci lo stato del contatore c");
+	ContatoreC= in2.nextBoolean();
+	
+	if (ContatoreC== false) {
+	System.out.println("bravo sei riuscito ad uscire");
+	}}}
+	controllo=false;
+}while(controllo== true);	
+
+}	
+}
+
